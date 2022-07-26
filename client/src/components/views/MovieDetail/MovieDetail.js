@@ -4,6 +4,8 @@ import MainImage from '../LandingPage/Sections/MainImage';
 import MovieInfo from './Sections/MovieInfo';
 import GridCards from '../commons/GridCards';
 import Favorite from './Sections/Favorite';
+import LikeDislikes from './Sections/LikeDislikes';
+
 import { Row } from 'antd';
 function MovieDetail(props) {
 
@@ -66,6 +68,9 @@ function MovieDetail(props) {
 
             <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
                 <button onClick={ toggleActorView }> Toggle Actor View </button>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem' }}>
+                <LikeDislikes movie userId={localStorage.getItem('userId')} movieId={movieId} />
             </div>
             {ActorToggle &&
                 <Row gutter={[16, 16]} >
